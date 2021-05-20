@@ -1,0 +1,101 @@
+// input 1 (output: "output is: bar")
+"output is: " + if ("yes" suffix "e" + if ("b" prefix "boo") "yes" else "no") "bar" else "baz"
+-------
+
+// input 2 (output: "output is: bazbob"
+boo() {
+  "boo"
+}
+
+"output is: " + if ("no" suffix "e" + if ("b" prefix boo()) "yes" else "no") "bar" else "baz" + "bob"
+-------
+
+// input 3 (output: "x: x: x: a")
+f(x) {
+  "x: " + x
+}
+
+f(f(f("a")))
+-------
+
+// input 4 (output: "xxxx")
+helper(str, acc, i, n) {
+  if (i suffix n)
+    if (n suffix i)
+      acc
+    else
+      helper(str, acc + str, i + ".", n)
+  else
+    ""
+}
+
+concat_n(str, n) {
+  helper(str, "", "", n)
+}
+
+concat_n("x", "....")
+-------
+
+// input 5 (output: "bar")
+if (if ("foo" prefix "foobar") "yes" else "no" suffix "dino") "foo" else "bar"
+-------
+
+// input 6 (syntax error: non-identifier argument in func declaration)
+boo("foo", x) {
+  "foo" + x
+}
+-------
+
+// input 7 (syntax error: invalid argument for top-level function call)
+foo(x) {
+  x
+}
+
+foo(x)
+-------
+
+// input 8 (output: "foo\nbar")
+foo() {
+  "foo"
+}
+
+foo()
+"bar"
+-------
+
+// Input 9 (output: "JohnJohn")
+name() {
+  "John"
+}
+
+repeat(x) {
+  x + x
+}
+
+cond_repeat(c, x) {
+  if (c prefix "yes")
+    if ("yes" prefix c)
+      repeat(x)
+    else
+      x
+  else
+    x
+}
+
+cond_repeat(if ("y" + "e" + "s" prefix "yes") "yes" else "n" + "o", name())
+-------
+
+// input 10 (output: "no, yes")
+if ("y" prefix "joifsj") "yes" else "no, " + if ("y" prefix "yiwejora") "yes" else "no"
+-------
+
+// input 11 (syntax error: non-identifier argument in func declaration)
+foo(if, x) {
+  if + x
+}
+
+foo("a", "b")
+-------
+
+// input 12 (output: "n")
+if (if (if ("f" prefix "f") "y" else "n" suffix "y") "y" else "n" prefix "n") "y" else "n"
