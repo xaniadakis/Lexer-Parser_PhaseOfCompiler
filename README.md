@@ -64,7 +64,7 @@ The program can be compiled and run as follows:
 
     make clean compile execute
     
-It then waits for user input from the keyboard, where you should type the input program and then press Ctrl-D once or twice to signal EOF. 
+It then waits for user input from the keyboard, where one should type the input program and then press Ctrl-D once or twice to signal EOF. 
     
 One can infer the desired syntax of the input language from the example above and the specifications of the language in the beggining.
 
