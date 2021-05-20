@@ -1,3 +1,5 @@
+//these examples were not created by me
+
 // input 1 (output: "output is: bar")
 "output is: " + if ("yes" suffix "e" + if ("b" prefix "boo") "yes" else "no") "bar" else "baz"
 -------
