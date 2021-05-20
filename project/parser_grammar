@@ -1,0 +1,22 @@
+program -> function_dec_list main
+
+function_dec_list -> function_dec_list function_dec
+                    |
+                    ;
+
+main -> top_if
+       | top_lvl_function_call_list
+       |
+       ;
+
+top_if  -> IF ( condition_list ) top_do ELSE top_do
+
+low_if  -> IF ( condition_list ) low_do ELSE low_do
+
+condition_list -> condition_list condition
+                |
+                ;
+
+condition -> strORid PREFIX strORid
+            | strORid SUFFIX strORid
+            |
