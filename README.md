@@ -1,6 +1,8 @@
 # Lexer and Parser phase of a Compiler + Translator 
 
 In this project I implement a parser and translator for a language supporting string operations. 
+
+
 The language supports the concatenation (+) operator over strings, function definitions and calls, conditionals (if-else i.e, every "if" must be followed by an "else"), and the following logical expressions:
 
 is-prefix-of (string1 prefix string2): Whether string1 is a prefix of string2.
